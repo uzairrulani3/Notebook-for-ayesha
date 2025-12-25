@@ -1,23 +1,26 @@
-const pages = document.querySelectorAll(".page");
-let index = 0;
+let pages = document.querySelectorAll(".page");
+let current = 0;
 
-const music = document.getElementById("music");
-document.body.addEventListener("click", () => {
-  if (music.paused) music.play();
-}, { once: true });
-
-function openBook() {
-  pages[index].classList.remove("show");
-  pages[index].classList.add("hidden");
-  index++;
-  pages[index].classList.remove("hidden");
-  pages[index].classList.add("show");
+function showPage(i){
+  pages.forEach(p => p.classList.remove("active"));
+  pages[i].classList.add("active");
 }
 
-function nextPage() {
-  pages[index].classList.remove("show");
-  pages[index].classList.add("hidden");
-  index++;
-  pages[index].classList.remove("hidden");
-  pages[index].classList.add("show");
+function nextPage(){
+  if(current < pages.length - 1){
+    current++;
+    showPage(current);
+  }
+}
+
+function prevPage(){
+  if(current > 0){
+    current--;
+    showPage(current);
+  }
+}
+
+function startOver(){
+  current = 0;
+  showPage(current);
 }
