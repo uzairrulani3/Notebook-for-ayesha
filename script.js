@@ -8,57 +8,31 @@ const restart = document.getElementById('restart');
 
 let index = 0;
 
-// ===== PAGE ANIMATION ENGINE =====
-function animatePage(oldPage, newPage, direction) {
-  oldPage.classList.remove('active');
-  oldPage.classList.add(direction === 'next' ? 'flip-out-left' : 'flip-out-right');
+function showPage() {
+  pages.forEach(p => p.classList.remove('active'));
+  pages[index].classList.add('active');
 
-  newPage.classList.remove('hidden');
-  newPage.classList.add('active', direction === 'next' ? 'flip-in-right' : 'flip-in-left');
-
-  setTimeout(() => {
-    oldPage.classList.remove('flip-out-left', 'flip-out-right');
-    newPage.classList.remove('flip-in-right', 'flip-in-left');
-    oldPage.classList.add('hidden');
-  }, 600);
-}
-
-// ===== PAGE CONTROL =====
-function showPage(newIndex, direction) {
-  if (newIndex < 0 || newIndex >= pages.length) return;
-
-  const oldPage = pages[index];
-  const newPage = pages[newIndex];
-
-  if (oldPage !== newPage) {
-    animatePage(oldPage, newPage, direction);
-    index = newIndex;
-  }
-
-  // Button logic
   start.style.display = index === 0 ? 'inline-block' : 'none';
   prev.style.display = index > 0 ? 'inline-block' : 'none';
   next.style.display = index > 0 && index < 5 ? 'inline-block' : 'none';
   restart.style.display = index === 5 ? 'inline-block' : 'none';
 }
 
-// ===== EVENTS =====
 document.body.addEventListener('click', () => {
   if (music.paused) music.play();
 }, { once: true });
 
-start.onclick = () => showPage(1, 'next');
-next.onclick = () => showPage(index + 1, 'next');
-prev.onclick = () => showPage(index - 1, 'prev');
-restart.onclick = () => showPage(0, 'prev');
+start.onclick = () => { index = 1; showPage(); };
+prev.onclick = () => { index--; showPage(); };
+next.onclick = () => { index++; showPage(); };
+restart.onclick = () => { index = 0; showPage(); };
 
-// ===== INITIAL STATE =====
-pages.forEach((p, i) => {
-  if (i !== 0) p.classList.add('hidden');
-});
+showPage();
 
-// ===== SNOW =====
+/* Snow generator */
+
 const snow = document.querySelector('.snow');
+
 for (let i = 0; i < 60; i++) {
   const flake = document.createElement('span');
   const size = Math.random() * 5 + 3;
