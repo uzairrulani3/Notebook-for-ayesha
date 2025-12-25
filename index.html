@@ -3,80 +3,82 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Ayesha</title>
+<title>Pages I Could Never Say Out Loud</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<audio id="music" preload="auto" loop>
-  <source src="assets/song.mp3" type="audio/mpeg">
+<audio id="music" loop>
+  <source src="song.mp3" type="audio/mpeg">
 </audio>
 
 <div class="bg"></div>
+<div class="snow"></div>
 
 <div class="notebook">
 
   <!-- COVER -->
-  <div class="cover page-frame" id="cover">
-    <h1 class="title">Pages I Could Never Say Out Loud</h1>
-    <p class="sub">For <span class="name">Ayesha</span> 💗</p>
-
-    <p>Some feelings don’t belong in messages… ✨</p>
-    <p>They deserve their own pages 📖</p>
-
-    <button class="cute-btn" onclick="openBook()">Open</button>
+  <div class="cover page" id="cover">
+    <img src="cover.jpg" class="cover-img">
+    <button onclick="openBook()">Open 💖</button>
   </div>
 
   <!-- PAGE 1 -->
-  <div class="page page-frame hidden" id="page1">
-    <p class="page-text">I never knew how many words could live inside my heart 💭</p>
-    <p class="page-text">Until your name started writing them there ✨</p>
-    <img src="assets/sticker1.png" class="sticker">
-    <button class="cute-btn" onclick="nextPage('page1','page2')">Next →</button>
+  <div class="page hidden" id="p1">
+    <h1 class="title">Pages I Could Never Say Out Loud 💗</h1>
+    <p class="sub">For <span class="name">Ayesha</span> 💞</p>
+    <p class="text bold">Some feelings don’t belong in messages… ✨</p>
+    <p class="text bold">They deserve their own pages 📖</p>
+    <button onclick="nextPage('p1','p2')">Next →</button>
   </div>
 
   <!-- PAGE 2 -->
-  <div class="page page-frame hidden" id="page2">
-    <p class="page-text bold">Some people pass through our lives…</p>
-    <p class="page-text bold">And some people change the way life feels 🌷</p>
-    <img src="assets/sticker2.png" class="sticker big-sticker">
-    <button class="cute-btn" onclick="nextPage('page2','page3')">Next →</button>
+  <div class="page hidden" id="p2">
+    <p class="text big bold">I never knew how many words could live inside my heart 💭</p>
+    <p class="text big bold">Until your name started writing them there ✨</p>
+    <img src="sticker1.png" class="sticker big-sticker">
+    <button onclick="nextPage('p2','p3')">Next →</button>
   </div>
 
   <!-- PAGE 3 -->
-  <div class="page page-frame hidden" id="page3">
-    <p class="page-text bold">Holding hands is not enough for me.</p>
-    <p class="page-text bold">Hugs don’t satisfy my soul.</p>
-    <p class="page-text bold">Cuddles can’t quiet the storm inside me.</p>
-    <p class="page-text bold">Even kisses fall short.</p>
-    <button class="cute-btn" onclick="nextPage('page3','page4')">Next →</button>
+  <div class="page hidden" id="p3">
+    <p class="text big bold">Some people pass through our lives… 🌸</p>
+    <p class="text big bold">And some people change the way life feels 💖</p>
+    <img src="sticker2.png" class="sticker big-sticker">
+    <button onclick="nextPage('p3','p4')">Next →</button>
   </div>
 
   <!-- PAGE 4 -->
-  <div class="page page-frame hidden" id="page4">
-    <p class="page-text bold">So let me hold your hands so fiercely my fingers forget where I end and you begin.</p>
-    <p class="page-text bold">Let me hug you so deeply that even the stars burn out watching us.</p>
-    <p class="page-text bold">Let me hold you so close that existence makes no sense without your touch.</p>
-    <p class="page-text bold">Let me kiss you with a love so intense that time halts and the universe holds its breath.</p>
-    <p class="page-text bold">You are mine, my love. And I am yours.</p>
-    <button class="cute-btn" onclick="nextPage('page4','page5')">Next →</button>
+  <div class="page hidden" id="p4">
+    <p class="text bold">Holding hands is not enough for me 🤍</p>
+    <p class="text bold">Hugs don’t satisfy my soul 💫</p>
+    <p class="text bold">Cuddles can’t quiet the storm inside me 🌙</p>
+    <p class="text bold">Even kisses fall short 💋</p>
+    <button onclick="nextPage('p4','p5')">Next →</button>
+  </div>
+
+  <!-- PAGE 5 -->
+  <div class="page hidden" id="p5">
+    <p class="text bold">So let me hold your hands so fiercely my fingers forget where I end and you begin 🫶</p>
+    <p class="text bold">Let me hug you so deeply that even the stars burn out watching us ✨</p>
+    <p class="text bold">Let me hold you so close that existence makes no sense without your touch 🌌</p>
+    <p class="text bold">Let me kiss you with a love so intense that time halts and the universe holds its breath 💞</p>
+    <p class="text bold">You are mine, my love. And I am yours. ♾️</p>
+    <button onclick="nextPage('p5','p6')">Next →</button>
   </div>
 
   <!-- FINAL PAGE -->
-  <div class="page page-frame hidden" id="page5">
-    <p class="page-text bold">You are my favorite story.</p>
-    <p class="page-text bold">And I want to keep writing it with you. 💞</p>
-
-    <div class="photo-frame tilted-photo">
-      <img src="assets/ayesha.jpg">
+  <div class="page hidden" id="p6">
+    <p class="text bold">You are my favorite story 📖</p>
+    <p class="text bold">And I want to keep writing it with you 💕</p>
+    <div class="photo-frame">
+      <img src="ayesha.jpg" class="photo">
     </div>
-
-    <button class="cute-btn" onclick="location.reload()">Start Over</button>
+    <button onclick="startOver()">Start Over 🔁</button>
   </div>
 
 </div>
-
-<div class="snow"></div>
 
 <script src="script.js"></script>
 </body>
