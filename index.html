@@ -3,63 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Notebook for Ayesha</title>
+<title>Notebook for Ayesha 💖</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<audio id="music" src="assets/song.mp3" loop></audio>
+<div class="snow"></div>
+
+<audio id="music" loop>
+  <source src="assets/song.mp3" type="audio/mpeg">
+</audio>
 
 <div class="app">
 
-<div class="page active small">
-  <img src="assets/page1.png">
-  <div class="controls single">
-    <button onclick="next()">Start ✨</button>
-  </div>
-</div>
+  <div class="page active first"><img src="assets/page1.png"></div>
+  <div class="page"><img src="assets/page2.png"></div>
+  <div class="page"><img src="assets/page3.png"></div>
+  <div class="page"><img src="assets/page4.png"></div>
+  <div class="page"><img src="assets/page5.png"></div>
+  <div class="page"><img src="assets/page6.png"></div>
 
-<div class="page">
-  <img src="assets/page2.png">
   <div class="controls">
-    <button onclick="prev()">← Previous</button>
-    <button onclick="next()">Next →</button>
+    <button id="prev">← Previous</button>
+    <button id="start">Open ✨</button>
+    <button id="next">Next →</button>
+    <button id="restart">Start Over 🔄</button>
   </div>
-</div>
-
-<div class="page big">
-  <img src="assets/page3.png">
-  <div class="controls">
-    <button onclick="prev()">← Previous</button>
-    <button onclick="next()">Next →</button>
-  </div>
-</div>
-
-<div class="page big">
-  <img src="assets/page4.png">
-  <div class="controls">
-    <button onclick="prev()">← Previous</button>
-    <button onclick="next()">Next →</button>
-  </div>
-</div>
-
-<div class="page big">
-  <img src="assets/page5.png">
-  <div class="controls">
-    <button onclick="prev()">← Previous</button>
-    <button onclick="next()">Next →</button>
-  </div>
-</div>
-
-<div class="page big">
-  <img src="assets/page6.png">
-  <div class="controls">
-    <button onclick="prev()">← Previous</button>
-    <button onclick="restart()">Start Over 🔄</button>
-  </div>
-</div>
-
-<div class="snow"></div>
 
 </div>
 
