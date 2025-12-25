@@ -73,16 +73,24 @@ button {
   z-index: 10;
 }
 
-.snow::before {
-  content: "";
+.snow span {
   position: absolute;
-  inset: 0;
-  background-image: radial-gradient(white 1px, transparent 1px);
-  background-size: 20px 20px;
-  animation: fall 10s linear infinite;
+  top: -10px;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: snow 8s linear infinite;
 }
 
-@keyframes fall {
-  from { background-position: 0 0; }
-  to { background-position: 0 400px; }
+@keyframes snow {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(110vh);
+    opacity: 0.2;
+  }
 }
