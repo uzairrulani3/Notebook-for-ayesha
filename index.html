@@ -8,68 +8,40 @@
 </head>
 <body>
 
-<audio id="bgm" src="assets/song.mp3" loop></audio>
+<audio id="music" src="assets/song.mp3" loop></audio>
+
+<div class="snow"></div>
 
 <div class="app">
+  <div class="viewer">
 
-  <div class="snow"></div>
-
-  <div class="book">
-
-    <!-- PAGE 1 -->
-    <div class="sheet active small">
+    <div class="sheet active small" id="p1">
       <img src="assets/page1.png">
-      <div class="controls center">
-        <button onclick="startBook()">Start 💖</button>
-      </div>
     </div>
 
-    <!-- PAGE 2 -->
-    <div class="sheet normal">
+    <div class="sheet" id="p2">
       <img src="assets/page2.png">
-      <div class="controls">
-        <button onclick="prev()">← Previous</button>
-        <button onclick="next()">Next →</button>
-      </div>
     </div>
 
-    <!-- PAGE 3 -->
-    <div class="sheet large">
+    <div class="sheet large" id="p3">
       <img src="assets/page3.png">
-      <div class="controls">
-        <button onclick="prev()">← Previous</button>
-        <button onclick="next()">Next →</button>
-      </div>
     </div>
 
-    <!-- PAGE 4 -->
-    <div class="sheet large">
+    <div class="sheet large" id="p4">
       <img src="assets/page4.png">
-      <div class="controls">
-        <button onclick="prev()">← Previous</button>
-        <button onclick="next()">Next →</button>
-      </div>
     </div>
 
-    <!-- PAGE 5 -->
-    <div class="sheet large">
+    <div class="sheet large" id="p5">
       <img src="assets/page5.png">
-      <div class="controls">
-        <button onclick="prev()">← Previous</button>
-        <button onclick="next()">Next →</button>
-      </div>
     </div>
 
-    <!-- PAGE 6 -->
-    <div class="sheet large">
+    <div class="sheet large" id="p6">
       <img src="assets/page6.png">
-      <div class="controls">
-        <button onclick="prev()">← Previous</button>
-        <button onclick="restart()">Start Over 🔁</button>
-      </div>
     </div>
 
   </div>
+
+  <div class="controls" id="controls"></div>
 </div>
 
 <script src="script.js"></script>
