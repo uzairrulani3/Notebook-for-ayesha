@@ -1,57 +1,36 @@
-const pages = [...document.querySelectorAll('.sheet')];
-const controls = document.getElementById('controls');
+const pages = document.querySelectorAll('.page');
+let index = 0;
 const music = document.getElementById('music');
 
-let current = 0;
-
-function render() {
-  pages.forEach(p => p.classList.remove('active'));
-  pages[current].classList.add('active');
-
-  controls.innerHTML = "";
-
-  if (current === 0) {
-    controls.innerHTML = `<button onclick="next()">Start ✨</button>`;
-  }
-  else if (current < pages.length - 1) {
-    controls.innerHTML = `
-      <button onclick="prev()">← Previous</button>
-      <button onclick="next()">Next →</button>
-    `;
-  }
-  else {
-    controls.innerHTML = `
-      <button onclick="prev()">← Previous</button>
-      <button onclick="restart()">Start Over 🔄</button>
-    `;
-  }
+function show(){
+  pages.forEach(p=>p.classList.remove('active'));
+  pages[index].classList.add('active');
 }
 
-function next() {
-  if (current === 0 && music.paused) music.play();
-  if (current < pages.length - 1) current++;
-  render();
+function next(){
+  if(music.paused) music.play();
+  index = Math.min(index+1, pages.length-1);
+  show();
 }
 
-function prev() {
-  if (current > 0) current--;
-  render();
+function prev(){
+  index = Math.max(index-1, 0);
+  show();
 }
 
-function restart() {
-  current = 0;
-  render();
+function restart(){
+  index = 0;
+  show();
 }
 
-render();
-
+// Snow (natural random fall)
 const snow = document.querySelector('.snow');
-
-for (let i = 0; i < 60; i++) {
-  const flake = document.createElement('span');
-  flake.style.left = Math.random() * 100 + 'vw';
-  flake.style.animationDuration = 4 + Math.random() * 6 + 's';
-  flake.style.opacity = Math.random();
-  flake.style.width = flake.style.height = 3 + Math.random() * 5 + 'px';
-  snow.appendChild(flake);
+for(let i=0;i<80;i++){
+  let s = document.createElement('span');
+  s.style.left = Math.random()*100 + 'vw';
+  s.style.animationDuration = 5 + Math.random()*6 + 's';
+  s.style.opacity = Math.random();
+  snow.appendChild(s);
 }
+
+show();
