@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<audio id="bgMusic" loop>
+<audio id="music" loop>
   <source src="assets/song.mp3" type="audio/mpeg">
 </audio>
 
@@ -16,29 +16,28 @@
 
 <div class="app">
 
-  <!-- PAGE 1 (COVER) -->
-  <div class="page active" id="page0">
-    <img src="assets/page1.jpg" class="full">
-    <div class="btnArea">
+  <div class="page active">
+    <img src="assets/page1.jpg">
+    <div class="btn">
       <button onclick="openBook()">Open 💖</button>
     </div>
   </div>
 
-  <!-- OTHER PAGES -->
-  <div class="page" id="page1"><img src="assets/page2.jpg" class="full"></div>
-  <div class="page" id="page2"><img src="assets/page3.jpg" class="full"></div>
-  <div class="page" id="page3"><img src="assets/page4.png" class="full"></div>
-  <div class="page" id="page4"><img src="assets/page5.jpg" class="full"></div>
-  <div class="page" id="page5">
-    <img src="assets/page6.jpg" class="full">
-    <div class="btnArea">
+  <div class="page"><img src="assets/page2.jpg"></div>
+  <div class="page"><img src="assets/page3.jpg"></div>
+  <div class="page"><img src="assets/page4.png"></div>
+  <div class="page"><img src="assets/page5.jpg"></div>
+
+  <div class="page">
+    <img src="assets/page6.jpg">
+    <div class="btn">
       <button onclick="restart()">Start Over 🔁</button>
     </div>
   </div>
 
-  <div class="controls hidden" id="controls">
-    <button onclick="prevPage()">← Previous</button>
-    <button onclick="nextPage()">Next →</button>
+  <div class="nav">
+    <button onclick="prev()">← Previous</button>
+    <button onclick="next()">Next →</button>
   </div>
 
 </div>
