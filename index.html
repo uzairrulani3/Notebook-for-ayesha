@@ -10,38 +10,57 @@
 
 <audio id="music" src="assets/song.mp3" loop></audio>
 
+<div class="app">
+
+<div class="page active small">
+  <img src="assets/page1.png">
+  <div class="controls single">
+    <button onclick="next()">Start ✨</button>
+  </div>
+</div>
+
+<div class="page">
+  <img src="assets/page2.png">
+  <div class="controls">
+    <button onclick="prev()">← Previous</button>
+    <button onclick="next()">Next →</button>
+  </div>
+</div>
+
+<div class="page big">
+  <img src="assets/page3.png">
+  <div class="controls">
+    <button onclick="prev()">← Previous</button>
+    <button onclick="next()">Next →</button>
+  </div>
+</div>
+
+<div class="page big">
+  <img src="assets/page4.png">
+  <div class="controls">
+    <button onclick="prev()">← Previous</button>
+    <button onclick="next()">Next →</button>
+  </div>
+</div>
+
+<div class="page big">
+  <img src="assets/page5.png">
+  <div class="controls">
+    <button onclick="prev()">← Previous</button>
+    <button onclick="next()">Next →</button>
+  </div>
+</div>
+
+<div class="page big">
+  <img src="assets/page6.png">
+  <div class="controls">
+    <button onclick="prev()">← Previous</button>
+    <button onclick="restart()">Start Over 🔄</button>
+  </div>
+</div>
+
 <div class="snow"></div>
 
-<div class="app">
-  <div class="viewer">
-
-    <div class="sheet active small" id="p1">
-      <img src="assets/page1.png">
-    </div>
-
-    <div class="sheet" id="p2">
-      <img src="assets/page2.png">
-    </div>
-
-    <div class="sheet large" id="p3">
-      <img src="assets/page3.png">
-    </div>
-
-    <div class="sheet large" id="p4">
-      <img src="assets/page4.png">
-    </div>
-
-    <div class="sheet large" id="p5">
-      <img src="assets/page5.png">
-    </div>
-
-    <div class="sheet large" id="p6">
-      <img src="assets/page6.png">
-    </div>
-
-  </div>
-
-  <div class="controls" id="controls"></div>
 </div>
 
 <script src="script.js"></script>
