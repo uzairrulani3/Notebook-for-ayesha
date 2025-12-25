@@ -1,36 +1,45 @@
 const pages = document.querySelectorAll('.page');
-let index = 0;
+let current = 0;
+
+const prev = document.getElementById('prev');
+const next = document.getElementById('next');
+const start = document.getElementById('start');
+const restart = document.getElementById('restart');
 const music = document.getElementById('music');
 
-function show(){
+function update(){
   pages.forEach(p=>p.classList.remove('active'));
-  pages[index].classList.add('active');
+  pages[current].classList.add('active');
+
+  prev.style.display = current === 0 ? 'none' : 'inline-block';
+  start.style.display = current === 0 ? 'inline-block' : 'none';
+  next.style.display = (current > 0 && current < 5) ? 'inline-block' : 'none';
+  restart.style.display = current === 5 ? 'inline-block' : 'none';
 }
 
-function next(){
-  if(music.paused) music.play();
-  index = Math.min(index+1, pages.length-1);
-  show();
-}
+start.onclick = () => {
+  current = 1;
+  music.play();
+  update();
+};
 
-function prev(){
-  index = Math.max(index-1, 0);
-  show();
-}
+next.onclick = () => { current++; update(); };
+prev.onclick = () => { current--; update(); };
 
-function restart(){
-  index = 0;
-  show();
-}
+restart.onclick = () => {
+  current = 0;
+  update();
+};
 
-// Snow (natural random fall)
+// Snow generator
+
 const snow = document.querySelector('.snow');
 for(let i=0;i<80;i++){
-  let s = document.createElement('span');
-  s.style.left = Math.random()*100 + 'vw';
-  s.style.animationDuration = 5 + Math.random()*6 + 's';
-  s.style.opacity = Math.random();
+  const s=document.createElement('span');
+  s.style.left=Math.random()*100+'vw';
+  s.style.animationDuration=(Math.random()*5+5)+'s';
+  s.style.animationDelay=Math.random()*5+'s';
   snow.appendChild(s);
 }
 
-show();
+update();
