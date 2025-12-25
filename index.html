@@ -1,69 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Notebook for Ayesha</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>For Ayesha 💖</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="bg"></div>
+<audio id="music" loop>
+  <source src="assets/song.mp3" type="audio/mpeg">
+</audio>
 
-<audio id="bgMusic" src="assets/song.mp3" loop></audio>
+<div class="snow"></div>
 
 <div class="notebook">
 
-  <div class="page active cover">
-    <div class="content">
+  <!-- PAGE 1 : COVER -->
+  <div class="page" id="p1">
+    <div class="cover">
       <h1>Pages I Could Never Say Out Loud 💌</h1>
-      <h3>For <span class="name">Ayesha</span> 💖</h3>
-      <p>Some feelings don’t belong in messages… ✨</p>
-      <p>They deserve their own pages 📖</p>
-      <button class="btn" onclick="nextPage()">Open 💕</button>
+      <h2>For <span class="name">Ayesha</span> 💖</h2>
+      <p>Some feelings don’t belong in messages ✨  
+         They deserve their own pages 📖</p>
+      <button onclick="nextPage()">Open 💕</button>
     </div>
   </div>
 
-  <div class="page">
-    <div class="content">
-      <p>I never knew how many words could live inside my heart 💭</p>
-      <p>Until your name started writing them there ✨</p>
-      <img src="assets/sticker1.png" class="sticker">
-      <button class="btn" onclick="prevPage()">⬅ Previous</button>
-      <button class="btn" onclick="nextPage()">Next ➡</button>
+  <!-- PAGE 2 -->
+  <div class="page hidden">
+    <p>Some people pass through our lives 🌷</p>
+    <p>And some people change the way life feels 💖</p>
+    <img class="sticker" src="assets/sticker1.png">
+    <div class="nav">
+      <button onclick="prevPage()">← Previous</button>
+      <button onclick="nextPage()">Next →</button>
     </div>
   </div>
 
-  <div class="page">
-    <div class="content">
-      <p>Some people pass through our lives 🌷</p>
-      <p>And some people change the way life feels 💖</p>
-      <img src="assets/sticker2.png" class="sticker">
-      <button class="btn" onclick="prevPage()">⬅ Previous</button>
-      <button class="btn" onclick="nextPage()">Next ➡</button>
+  <!-- PAGE 3 -->
+  <div class="page hidden">
+    <p>I never knew how many words could live inside my heart 💭</p>
+    <p>Until your name started writing them there ✨</p>
+    <img class="sticker" src="assets/sticker2.png">
+    <div class="nav">
+      <button onclick="prevPage()">← Previous</button>
+      <button onclick="nextPage()">Next →</button>
     </div>
   </div>
 
-  <div class="page">
-    <div class="content">
-      <p>Holding hands is not enough for me 🤍</p>
-      <p>Hugs don’t satisfy my soul 🫂</p>
-      <p>Cuddles can’t quiet the storm inside me 🌊</p>
-      <p>Even kisses fall short 💋</p>
-      <button class="btn" onclick="prevPage()">⬅ Previous</button>
-      <button class="btn" onclick="nextPage()">Next ➡</button>
+  <!-- PAGE 4 -->
+  <div class="page hidden">
+    <p>Holding hands is not enough for me 🤍</p>
+    <p>Hugs don’t satisfy my soul 🫂</p>
+    <p>Cuddles can’t quiet the storm inside me 🌊</p>
+    <p>Even kisses fall short 💋</p>
+    <div class="nav">
+      <button onclick="prevPage()">← Previous</button>
+      <button onclick="nextPage()">Next →</button>
     </div>
   </div>
 
-  <div class="page">
-    <div class="content">
-      <p>You are my favorite story 📖</p>
-      <p>And I want to keep writing it with you 💞</p>
-      <div class="photo-frame">
-        <img src="assets/ayesha.jpg">
-      </div>
-      <button class="btn" onclick="prevPage()">⬅ Previous</button>
-      <button class="btn" onclick="startOver()">Start Over 🔄</button>
+  <!-- PAGE 5 -->
+  <div class="page hidden">
+    <p>So let me hold your hands so fiercely 🥺</p>
+    <p>My fingers forget where I end and you begin 💞</p>
+    <p>Let me hug you so deeply the stars burn out watching us 🌌</p>
+    <p>You are mine, my love — and I am yours ♾️</p>
+    <div class="nav">
+      <button onclick="prevPage()">← Previous</button>
+      <button onclick="nextPage()">Next →</button>
+    </div>
+  </div>
+
+  <!-- PAGE 6 -->
+  <div class="page hidden">
+    <p>You are my favorite story 📖</p>
+    <p>And I want to keep writing it with you 💕</p>
+    <div class="photo-frame">
+      <img src="assets/ayesha.jpg">
+    </div>
+    <div class="nav">
+      <button onclick="prevPage()">← Previous</button>
+      <button onclick="startOver()">Start Over 🔁</button>
     </div>
   </div>
 
