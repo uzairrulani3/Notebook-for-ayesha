@@ -2,9 +2,10 @@ body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
   overflow: hidden;
+  background: black;
 }
 
-/* Background */
+/* 🌌 Background */
 .bg {
   position: fixed;
   inset: 0;
@@ -12,7 +13,7 @@ body {
   z-index: 0;
 }
 
-/* Notebook container */
+/* 📓 Notebook container */
 .notebook {
   position: fixed;
   inset: 0;
@@ -21,39 +22,48 @@ body {
   align-items: center;
   z-index: 2;
 }
+
+/* ✏️ Subtitle */
 .sub {
   opacity: 0.85;
   font-style: italic;
   margin-bottom: 20px;
 }
 
-/* Pages */
+/* 📄 Pages */
 .cover, .page {
   width: 85%;
   max-width: 420px;
   height: 520px;
   background: url("assets/paper.png") center/cover no-repeat;
   border-radius: 18px;
-  box-shadow: 0 20px 40px rgba(0,0,0,.35);
+  box-shadow: 0 20px 40px rgba(0,0,0,.45);
   padding: 28px;
   text-align: center;
-  animation: appear 0.6s ease;
   position: relative;
+
+  /* Tilted notebook look */
+  transform: rotate(-6deg);
+  animation: appear 0.6s ease;
 }
 
+/* Hidden state */
 .hidden {
   display: none;
 }
 
+/* Typography spacing */
 .cover h1 {
-  margin-top: 80px;
+  margin-top: 70px;
 }
 
-.cover p {
-  margin-top: 10px;
-  opacity: .8;
+.cover p, .page p {
+  margin-top: 12px;
+  line-height: 1.5;
+  opacity: 0.9;
 }
 
+/* Buttons */
 .cover button, .page button {
   position: absolute;
   bottom: 20px;
@@ -64,9 +74,11 @@ body {
   background: #ff7eb3;
   color: white;
   font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0,0,0,.3);
 }
 
-/* Stickers */
+/* 🧸 Stickers */
 .sticker {
   width: 70px;
   position: absolute;
@@ -74,13 +86,14 @@ body {
   right: 15px;
 }
 
-/* Photo frame */
+/* 🖼️ Photo frame */
 .photo-frame {
-  margin-top: 30px;
+  margin-top: 28px;
   padding: 8px;
   border-radius: 16px;
   background: linear-gradient(45deg, #ff9fd4, #ffe28a);
   display: inline-block;
+  box-shadow: 0 8px 20px rgba(0,0,0,.35);
 }
 
 .photo-frame img {
@@ -88,7 +101,7 @@ body {
   border-radius: 12px;
 }
 
-/* Snow */
+/* ❄️ Snow */
 .snow {
   position: fixed;
   inset: 0;
@@ -105,13 +118,23 @@ body {
   animation: fall linear infinite;
 }
 
-/* Animations */
+/* 🌀 Page turn animation */
+.page.turn, .cover.turn {
+  animation: turnPage 0.7s ease forwards;
+}
+
+/* 🎞️ Animations */
 @keyframes fall {
   from { transform: translateY(-10px); }
   to { transform: translateY(110vh); }
 }
 
 @keyframes appear {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: rotate(-6deg) translateY(20px); }
+  to { opacity: 1; transform: rotate(-6deg) translateY(0); }
+}
+
+@keyframes turnPage {
+  0% { transform: rotate(-6deg) scale(1); opacity: 1; }
+  100% { transform: rotate(-20deg) translateX(-220px) scale(0.8); opacity: 0; }
 }
