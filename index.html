@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Notebook For Ayesha</title>
+<title>Notebook</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,21 +14,25 @@
 
 <div class="snow"></div>
 
-<div class="wrapper">
+<div class="book">
 
-  <!-- Cover Page -->
-  <div class="cover" id="cover">
+  <!-- COVER -->
+  <div class="page active" id="page0">
+    <img src="assets/page1.jpg">
     <button class="openBtn" onclick="openBook()">Open 💖</button>
   </div>
 
-  <!-- Notebook -->
-  <div class="notebook hidden" id="notebook">
-    <img id="pageImage" src="assets/page1.jpg">
+  <!-- PAGES -->
+  <div class="page" id="page1"><img src="assets/page2.jpg"></div>
+  <div class="page" id="page2"><img src="assets/page3.jpg"></div>
+  <div class="page" id="page3"><img src="assets/page4.png"></div>
+  <div class="page" id="page4"><img src="assets/page5.jpg"></div>
+  <div class="page" id="page5"><img src="assets/page6.jpg"></div>
 
-    <div class="controls">
-      <button onclick="prevPage()">⬅ Previous</button>
-      <button onclick="nextPage()">Next ➡</button>
-    </div>
+  <!-- CONTROLS -->
+  <div class="controls hidden" id="controls">
+    <button onclick="prevPage()">← Previous</button>
+    <button onclick="nextPage()">Next →</button>
   </div>
 
 </div>
