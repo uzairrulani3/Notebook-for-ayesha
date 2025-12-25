@@ -1,61 +1,58 @@
-* { margin:0; padding:0; box-sizing:border-box; }
+*{margin:0;padding:0;box-sizing:border-box}
 
-body {
-  background: #9fd8f5;
+body{
+  background:#9fd8f5;
   height:100vh;
   overflow:hidden;
-  font-family: system-ui, sans-serif;
+  font-family:system-ui,sans-serif;
 }
 
-.app {
+.app{
   width:100vw;
   height:100vh;
   position:relative;
 }
 
-.page {
+.page{
   position:absolute;
   inset:0;
   display:flex;
+  flex-direction:column;
   align-items:center;
   justify-content:center;
   opacity:0;
   transform:scale(1.08);
-  transition:0.5s ease;
+  transition:.45s ease;
 }
 
-.page.active {
+.page.active{
   opacity:1;
   transform:scale(1);
   z-index:2;
 }
 
-.page img {
-  width:100%;
-  height:100%;
-  object-fit:contain;
-}
-
-.controls {
-  position:absolute;
-  bottom:6%;
-  width:100%;
+.frame{
+  width:88vw;
+  max-width:360px;
+  aspect-ratio:3/4;     /* << This is the magic */
   display:flex;
+  align-items:center;
   justify-content:center;
 }
 
-button {
-  background:#ff6fa1;
-  color:white;
-  border:none;
-  padding:14px 32px;
-  border-radius:30px;
-  font-size:17px;
+.frame img{
+  width:100%;
+  height:100%;
+  object-fit:contain;   /* Forces all pages to match page2 */
 }
 
-.nav {
+.controls{
+  margin-top:18px;
+}
+
+.nav{
   position:absolute;
-  bottom:1.5%;
+  bottom:14px;
   width:100%;
   display:flex;
   justify-content:center;
@@ -63,17 +60,24 @@ button {
   z-index:5;
 }
 
+button{
+  background:#ff6fa1;
+  color:#fff;
+  border:none;
+  padding:13px 30px;
+  border-radius:28px;
+  font-size:16px;
+}
+
 /* Snow */
-.snow span {
+.snow span{
   position:fixed;
   top:-10px;
   width:6px;
   height:6px;
   background:white;
   border-radius:50%;
-  animation: fall linear infinite;
+  animation:fall linear infinite;
 }
 
-@keyframes fall {
-  to { transform: translateY(110vh); }
-}
+@keyframes fall{to{transform:translateY(110vh)}}
