@@ -1,35 +1,46 @@
-const pages=document.querySelectorAll('.page')
-const music=document.getElementById('music')
-let current=0
+const pages = document.querySelectorAll('.page')
+const nav   = document.querySelector('.nav')
+const music = document.getElementById('music')
 
-function show(n){
+let current = 0
+
+function update(){
   pages.forEach(p=>p.classList.remove('active'))
-  pages[n].classList.add('active')
+  pages[current].classList.add('active')
+
+  // NAV visibility rules
+  if(current === 0){
+    nav.style.display = "none"
+  } else if(current === pages.length-1){
+    nav.style.display = "none"
+  } else {
+    nav.style.display = "flex"
+  }
 }
 
 function openBook(){
   if(music.paused) music.play()
-  current=1
-  show(current)
+  current = 1
+  update()
 }
 
 function next(){
-  if(current<pages.length-1){
+  if(current < pages.length-1){
     current++
-    show(current)
+    update()
   }
 }
 
 function prev(){
-  if(current>0){
+  if(current > 0){
     current--
-    show(current)
+    update()
   }
 }
 
 function restart(){
-  current=0
-  show(current)
+  current = 0
+  update()
 }
 
 /* Snow */
@@ -40,3 +51,5 @@ for(let i=0;i<90;i++){
   s.style.animationDuration=(Math.random()*5+5)+'s'
   snow.appendChild(s)
 }
+
+update()
