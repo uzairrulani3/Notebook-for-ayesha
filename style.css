@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+/* Background */
+.bg {
+  position: fixed;
+  inset: 0;
+  background: url("assets/bg.jpg") center/cover no-repeat;
+  z-index: 0;
+}
+
+/* Notebook container */
+.notebook {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+/* Pages */
+.cover, .page {
+  width: 85%;
+  max-width: 420px;
+  height: 520px;
+  background: url("assets/paper.png") center/cover no-repeat;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0,0,0,.35);
+  padding: 28px;
+  text-align: center;
+  animation: appear 0.6s ease;
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+.cover h1 {
+  margin-top: 80px;
+}
+
+.cover p {
+  margin-top: 10px;
+  opacity: .8;
+}
+
+.cover button, .page button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #ff7eb3;
+  color: white;
+  font-size: 16px;
+}
+
+/* Stickers */
+.sticker {
+  width: 70px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+/* Photo frame */
+.photo-frame {
+  margin-top: 30px;
+  padding: 8px;
+  border-radius: 16px;
+  background: linear-gradient(45deg, #ff9fd4, #ffe28a);
+  display: inline-block;
+}
+
+.photo-frame img {
+  width: 180px;
+  border-radius: 12px;
+}
+
+/* Snow */
+.snow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.snow span {
+  position: absolute;
+  top: -10px;
+  border-radius: 50%;
+  background: white;
+  animation: fall linear infinite;
+}
+
+/* Animations */
+@keyframes fall {
+  from { transform: translateY(-10px); }
+  to { transform: translateY(110vh); }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
