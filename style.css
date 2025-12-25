@@ -45,7 +45,7 @@ body {
 }
 
 .sheet.small img { transform: scale(0.92); }
-.sheet.large img { transform: scale(1.06); }
+.sheet.large img { transform: scale(1.14); }
 
 .controls {
   margin-top: 14px;
