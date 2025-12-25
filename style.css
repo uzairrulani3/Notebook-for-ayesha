@@ -1,86 +1,78 @@
+* { box-sizing: border-box; }
+
 body {
   margin: 0;
   background: #9dd7f5;
-  font-family: "Segoe UI", sans-serif;
   overflow: hidden;
+  font-family: system-ui, sans-serif;
 }
 
-.wrapper {
+.book {
+  width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
 }
 
-/* Cover */
+.page {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity .35s ease, transform .35s ease;
+}
 
-.cover {
-  width: 90%;
-  max-width: 420px;
-  height: 520px;
-  background: url("assets/page6.jpg") center/contain no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+.page.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 2;
+}
+
+.page img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .openBtn {
-  margin-bottom: 30px;
-  padding: 12px 28px;
-  border-radius: 20px;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 14px 32px;
+  border-radius: 22px;
   border: none;
   background: #ff6fa1;
   color: white;
   font-size: 18px;
 }
 
-/* Notebook */
-
-.notebook {
-  width: 90%;
-  max-width: 420px;
-  text-align: center;
-}
-
-.notebook img {
-  width: 100%;
-  border-radius: 18px;
-  animation: flip .6s ease;
-}
-
 .controls {
-  margin-top: 12px;
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+  z-index: 5;
 }
 
 .controls button {
-  padding: 10px 22px;
-  margin: 5px;
-  border-radius: 20px;
+  padding: 12px 26px;
+  margin: 0 10px;
+  border-radius: 22px;
   border: none;
   background: #ff6fa1;
   color: white;
   font-size: 15px;
 }
 
-.hidden {
-  display: none;
-}
-
-/* Page Turn */
-
-@keyframes flip {
-  from { transform: rotateY(90deg); opacity: 0; }
-  to { transform: rotateY(0); opacity: 1; }
-}
+.hidden { display: none; }
 
 /* Snow */
-
 .snow span {
   position: fixed;
   top: -10px;
-  background: white;
   width: 6px;
   height: 6px;
+  background: white;
   border-radius: 50%;
   animation: fall linear infinite;
 }
