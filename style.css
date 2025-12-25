@@ -81,3 +81,18 @@ button{
 }
 
 @keyframes fall{to{transform:translateY(110vh)}}
+
+/* Page sizing adjustments */
+
+/* Page 1 slightly smaller */
+.page:nth-child(1) .frame {
+  transform: scale(0.92);
+}
+
+/* Pages 3–6 slightly bigger */
+.page:nth-child(3) .frame,
+.page:nth-child(4) .frame,
+.page:nth-child(5) .frame,
+.page:nth-child(6) .frame {
+  transform: scale(1.06);
+}
