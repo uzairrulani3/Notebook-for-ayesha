@@ -44,3 +44,14 @@ function restart() {
 }
 
 render();
+
+const snow = document.querySelector('.snow');
+
+for (let i = 0; i < 60; i++) {
+  const flake = document.createElement('span');
+  flake.style.left = Math.random() * 100 + 'vw';
+  flake.style.animationDuration = 4 + Math.random() * 6 + 's';
+  flake.style.opacity = Math.random();
+  flake.style.width = flake.style.height = 3 + Math.random() * 5 + 'px';
+  snow.appendChild(flake);
+}
