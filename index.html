@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Ayesha</title>
 <link rel="stylesheet" href="style.css">
@@ -13,43 +14,65 @@
 
 <div class="bg"></div>
 
-<div class="notebook" id="notebook">
+<div class="notebook">
 
-<div class="cover" id="cover">
-  <h1>Pages I Could Never Say Out Loud</h1>
-  <p class="sub">For Ayesha 💗</p>
-
-  <p>Some feelings don’t belong in messages… ✨</p>
-  <p>They deserve their own pages 📖</p>
-
-  <button onclick="openBook()">Open</button>
-</div>
-
-<div class="page hidden" id="page1">
-  <p>I never knew how many words could live inside my heart 💭</p>
-  <p>Until your name started writing them there ✨</p>
-  <img src="assets/sticker1.png" class="sticker">
-  <button onclick="nextPage('page1','page2')">Next →</button>
-</div>
-
-<div class="page hidden" id="page2">
-  <p>Some people pass through our lives…</p>
-  <p>And some people change the way life feels 🌷</p>
-  <img src="assets/sticker2.png" class="sticker">
-  <button onclick="nextPage('page2','page3')">Next →</button>
-</div>
-
-<div class="page hidden" id="page3">
-  <p>You are my favorite story.</p>
-  <p>And I want to keep writing it with you. 💞</p>
-  <div class="photo-frame">
-    <img src="assets/ayesha.jpg">
+  <!-- COVER -->
+  <div class="cover" id="cover">
+    <h1>Pages I Could Never Say Out Loud</h1>
+    <p class="sub">For Ayesha 💗</p>
+    <p>Some feelings don’t belong in messages… ✨</p>
+    <p>They deserve their own pages 📖</p>
+    <button onclick="openBook()">Open</button>
   </div>
-  <button onclick="location.reload()">Start Over</button>
-</div>
+
+  <!-- PAGE 1 -->
+  <div class="page hidden" id="page1">
+    <p>I never knew how many words could live inside my heart 💭</p>
+    <p>Until your name started writing them there ✨</p>
+    <img src="assets/sticker1.png" class="sticker">
+    <button onclick="nextPage('page1','page2')">Next →</button>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page hidden" id="page2">
+    <p>Some people pass through our lives…</p>
+    <p>And some people change the way life feels 🌷</p>
+    <img src="assets/sticker2.png" class="sticker">
+    <button onclick="nextPage('page2','page3')">Next →</button>
+  </div>
+
+  <!-- PAGE 3 (Main Message Part 1) -->
+  <div class="page hidden" id="page3">
+    <p>Holding hands is not enough for me.</p>
+    <p>Hugs don’t satisfy my soul.</p>
+    <p>Cuddles can’t quiet the storm inside me.</p>
+    <p>Even kisses fall short.</p>
+    <button onclick="nextPage('page3','page4')">Next →</button>
+  </div>
+
+  <!-- PAGE 4 (Main Message Part 2) -->
+  <div class="page hidden" id="page4">
+    <p>So let me hold your hands so fiercely my fingers forget where I end and you begin.</p>
+    <p>Let me hug you so deeply that even the stars burn out watching us.</p>
+    <p>Let me hold you so close that existence makes no sense without your touch.</p>
+    <p>Let me kiss you with a love so intense that time halts and the universe holds its breath.</p>
+    <p>You are mine, my love. And I am yours.</p>
+    <button onclick="nextPage('page4','page5')">Next →</button>
+  </div>
+
+  <!-- FINAL PAGE -->
+  <div class="page hidden" id="page5">
+    <p>You are my favorite story.</p>
+    <p>And I want to keep writing it with you. 💞</p>
+    <div class="photo-frame">
+      <img src="assets/ayesha.jpg">
+    </div>
+    <button onclick="location.reload()">Start Over</button>
+  </div>
 
 </div>
-  <div class="snow"></div>
+
+<div class="snow"></div>
 
 <script src="script.js"></script>
 </body>
