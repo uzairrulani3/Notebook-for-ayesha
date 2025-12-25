@@ -1,77 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Notebook for Ayesha 💖</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notebook for Ayesha</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<audio id="bgm" src="assets/song.mp3" loop></audio>
+
 <div class="app">
 
-  <!-- Music -->
-  <audio id="music" loop>
-    <source src="assets/song.mp3" type="audio/mpeg">
-  </audio>
-
-  <!-- Snow -->
   <div class="snow"></div>
 
-  <!-- PAGE 1 -->
-  <div class="page active">
-    <div class="frame">
-      <img src="assets/page1.png" alt="Page 1">
-    </div>
-    <div class="controls">
-      <button onclick="openBook()">Start ✨</button>
-    </div>
-  </div>
+  <div class="book">
 
-  <!-- PAGE 2 -->
-  <div class="page">
-    <div class="frame">
-      <img src="assets/page2.png" alt="Page 2">
+    <!-- PAGE 1 -->
+    <div class="sheet active small">
+      <img src="assets/page1.png">
+      <div class="controls center">
+        <button onclick="startBook()">Start 💖</button>
+      </div>
     </div>
-  </div>
 
-  <!-- PAGE 3 -->
-  <div class="page">
-    <div class="frame">
-      <img src="assets/page3.png" alt="Page 3">
+    <!-- PAGE 2 -->
+    <div class="sheet normal">
+      <img src="assets/page2.png">
+      <div class="controls">
+        <button onclick="prev()">← Previous</button>
+        <button onclick="next()">Next →</button>
+      </div>
     </div>
-  </div>
 
-  <!-- PAGE 4 -->
-  <div class="page">
-    <div class="frame">
-      <img src="assets/page4.png" alt="Page 4">
+    <!-- PAGE 3 -->
+    <div class="sheet large">
+      <img src="assets/page3.png">
+      <div class="controls">
+        <button onclick="prev()">← Previous</button>
+        <button onclick="next()">Next →</button>
+      </div>
     </div>
-  </div>
 
-  <!-- PAGE 5 -->
-  <div class="page">
-    <div class="frame">
-      <img src="assets/page5.png" alt="Page 5">
+    <!-- PAGE 4 -->
+    <div class="sheet large">
+      <img src="assets/page4.png">
+      <div class="controls">
+        <button onclick="prev()">← Previous</button>
+        <button onclick="next()">Next →</button>
+      </div>
     </div>
-  </div>
 
-  <!-- PAGE 6 -->
-  <div class="page">
-    <div class="frame">
-      <img src="assets/page6.png" alt="Page 6">
+    <!-- PAGE 5 -->
+    <div class="sheet large">
+      <img src="assets/page5.png">
+      <div class="controls">
+        <button onclick="prev()">← Previous</button>
+        <button onclick="next()">Next →</button>
+      </div>
     </div>
-    <div class="controls">
-      <button onclick="restart()">Start Over 🔁</button>
+
+    <!-- PAGE 6 -->
+    <div class="sheet large">
+      <img src="assets/page6.png">
+      <div class="controls">
+        <button onclick="prev()">← Previous</button>
+        <button onclick="restart()">Start Over 🔁</button>
+      </div>
     </div>
-  </div>
 
-  <!-- GLOBAL NAV -->
-  <div class="nav">
-    <button onclick="prev()">← Previous</button>
-    <button onclick="next()">Next →</button>
   </div>
-
 </div>
 
 <script src="script.js"></script>
