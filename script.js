@@ -1,44 +1,42 @@
-const pages = document.querySelectorAll('.page');
-const music = document.getElementById('music');
-
-let current = 0;
+const pages=document.querySelectorAll('.page')
+const music=document.getElementById('music')
+let current=0
 
 function show(n){
-  pages.forEach(p => p.classList.remove('active'));
-  pages[n].classList.add('active');
+  pages.forEach(p=>p.classList.remove('active'))
+  pages[n].classList.add('active')
 }
 
 function openBook(){
-  if(music.paused) music.play();
-  current = 1;
-  show(current);
+  if(music.paused) music.play()
+  current=1
+  show(current)
 }
 
 function next(){
-  if(current < pages.length - 1){
-    current++;
-    show(current);
+  if(current<pages.length-1){
+    current++
+    show(current)
   }
 }
 
 function prev(){
-  if(current > 0){
-    current--;
-    show(current);
+  if(current>0){
+    current--
+    show(current)
   }
 }
 
 function restart(){
-  current = 0;
-  show(current);
+  current=0
+  show(current)
 }
 
-/* Snow generator */
-const snow = document.querySelector('.snow');
-
+/* Snow */
+const snow=document.querySelector('.snow')
 for(let i=0;i<90;i++){
-  const flake = document.createElement('span');
-  flake.style.left = Math.random()*100 + 'vw';
-  flake.style.animationDuration = (Math.random()*5 + 5) + 's';
-  snow.appendChild(flake);
+  const s=document.createElement('span')
+  s.style.left=Math.random()*100+'vw'
+  s.style.animationDuration=(Math.random()*5+5)+'s'
+  snow.appendChild(s)
 }
