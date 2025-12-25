@@ -14,22 +14,28 @@
 
 <div class="snow"></div>
 
-<div class="book">
+<div class="app">
 
-  <!-- COVER -->
+  <!-- PAGE 1 (COVER) -->
   <div class="page active" id="page0">
-    <img src="assets/page1.jpg">
-    <button class="openBtn" onclick="openBook()">Open 💖</button>
+    <img src="assets/page1.jpg" class="full">
+    <div class="btnArea">
+      <button onclick="openBook()">Open 💖</button>
+    </div>
   </div>
 
-  <!-- PAGES -->
-  <div class="page" id="page1"><img src="assets/page2.jpg"></div>
-  <div class="page" id="page2"><img src="assets/page3.jpg"></div>
-  <div class="page" id="page3"><img src="assets/page4.png"></div>
-  <div class="page" id="page4"><img src="assets/page5.jpg"></div>
-  <div class="page" id="page5"><img src="assets/page6.jpg"></div>
+  <!-- OTHER PAGES -->
+  <div class="page" id="page1"><img src="assets/page2.jpg" class="full"></div>
+  <div class="page" id="page2"><img src="assets/page3.jpg" class="full"></div>
+  <div class="page" id="page3"><img src="assets/page4.png" class="full"></div>
+  <div class="page" id="page4"><img src="assets/page5.jpg" class="full"></div>
+  <div class="page" id="page5">
+    <img src="assets/page6.jpg" class="full">
+    <div class="btnArea">
+      <button onclick="restart()">Start Over 🔁</button>
+    </div>
+  </div>
 
-  <!-- CONTROLS -->
   <div class="controls hidden" id="controls">
     <button onclick="prevPage()">← Previous</button>
     <button onclick="nextPage()">Next →</button>
