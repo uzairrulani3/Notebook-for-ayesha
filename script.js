@@ -1,4 +1,3 @@
-// 🎵 Music control — starts from 10 seconds after first interaction
 const music = document.getElementById("music");
 
 document.body.addEventListener("click", () => {
@@ -8,35 +7,27 @@ document.body.addEventListener("click", () => {
   }
 }, { once: true });
 
-
-// 📖 Notebook controls
 function openBook() {
-  const cover = document.getElementById("cover");
-  const firstPage = document.getElementById("page1");
+  transition("cover", "page1");
+}
 
-  cover.classList.add("turn");
+function nextPage(a, b) {
+  transition(a, b);
+}
+
+function transition(current, next) {
+  const c = document.getElementById(current);
+  const n = document.getElementById(next);
+
+  c.classList.add("turn");
+
   setTimeout(() => {
-    cover.classList.add("hidden");
-    cover.classList.remove("turn");
-    firstPage.classList.remove("hidden");
+    c.classList.add("hidden");
+    c.classList.remove("turn");
+    n.classList.remove("hidden");
   }, 700);
 }
 
-function nextPage(current, next) {
-  const currentPage = document.getElementById(current);
-  const nextPage = document.getElementById(next);
-
-  currentPage.classList.add("turn");
-
-  setTimeout(() => {
-    currentPage.classList.add("hidden");
-    currentPage.classList.remove("turn");
-    nextPage.classList.remove("hidden");
-  }, 700);
-}
-
-
-// ❄️ Snow generation
 const snow = document.querySelector(".snow");
 
 for (let i = 0; i < 70; i++) {
