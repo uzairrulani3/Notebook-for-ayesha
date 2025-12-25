@@ -82,17 +82,27 @@ button{
 
 @keyframes fall{to{transform:translateY(110vh)}}
 
-/* Page sizing adjustments */
+.sheet img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+}
 
-/* Page 1 slightly smaller */
-.page:nth-child(1) .frame {
+.sheet.small img {
   transform: scale(0.92);
 }
 
-/* Pages 3–6 slightly bigger */
-.page:nth-child(3) .frame,
-.page:nth-child(4) .frame,
-.page:nth-child(5) .frame,
-.page:nth-child(6) .frame {
+.sheet.large img {
   transform: scale(1.06);
+}
+
+.controls {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.controls.center {
+  justify-content: center;
 }
