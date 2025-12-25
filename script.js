@@ -1,45 +1,32 @@
 const music = document.getElementById("music");
 
 document.body.addEventListener("click", () => {
-  if (music.paused) {
-    music.currentTime = 10;
-    music.play();
-  }
+  if (music.paused) music.play();
 }, { once: true });
 
 function openBook() {
-  transition("cover", "page1");
+  document.getElementById("cover").classList.add("hidden");
+  document.getElementById("p1").classList.remove("hidden");
 }
 
-function nextPage(a, b) {
-  transition(a, b);
+function nextPage(a,b){
+  document.getElementById(a).classList.add("hidden");
+  document.getElementById(b).classList.remove("hidden");
 }
 
-function transition(current, next) {
-  const c = document.getElementById(current);
-  const n = document.getElementById(next);
-
-  c.classList.add("turn");
-
-  setTimeout(() => {
-    c.classList.add("hidden");
-    c.classList.remove("turn");
-    n.classList.remove("hidden");
-  }, 700);
+function startOver(){
+  location.reload();
 }
 
 const snow = document.querySelector(".snow");
 
-for (let i = 0; i < 70; i++) {
-  const flake = document.createElement("span");
-  const size = Math.random() * 6 + 3;
-
-  flake.style.width = size + "px";
-  flake.style.height = size + "px";
-  flake.style.left = Math.random() * 100 + "vw";
-  flake.style.opacity = Math.random();
-  flake.style.animationDuration = (Math.random() * 6 + 6) + "s";
-  flake.style.animationDelay = Math.random() * 5 + "s";
-
-  snow.appendChild(flake);
+for(let i=0;i<70;i++){
+  const s = document.createElement("span");
+  const size = Math.random()*6+3;
+  s.style.width = size+"px";
+  s.style.height = size+"px";
+  s.style.left = Math.random()*100+"vw";
+  s.style.animationDuration = Math.random()*6+6+"s";
+  s.style.opacity = Math.random();
+  snow.appendChild(s);
 }
