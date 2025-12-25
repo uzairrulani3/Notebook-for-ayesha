@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Ayesha</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<audio id="music" preload="auto" loop>
+  <source src="assets/song.mp3" type="audio/mpeg">
+</audio>
+
+<div class="bg"></div>
+
+<div class="notebook" id="notebook">
+
+<div class="cover" id="cover">
+  <h1>Pages I Could Never Say Out Loud</h1>
+  <p>For Ayesha 💗</p>
+  <button onclick="openBook()">Open</button>
+</div>
+
+<div class="page hidden" id="page1">
+  <p>I never knew how many words could live inside my heart 💭</p>
+  <p>Until your name started writing them there ✨</p>
+  <img src="assets/sticker1.png" class="sticker">
+  <button onclick="nextPage('page1','page2')">Next →</button>
+</div>
+
+<div class="page hidden" id="page2">
+  <p>Some people pass through our lives…</p>
+  <p>And some people change the way life feels 🌷</p>
+  <img src="assets/sticker2.png" class="sticker">
+  <button onclick="nextPage('page2','page3')">Next →</button>
+</div>
+
+<div class="page hidden" id="page3">
+  <p>You are my favorite story.</p>
+  <p>And I want to keep writing it with you. 💞</p>
+  <div class="photo-frame">
+    <img src="assets/ayesha.jpg">
+  </div>
+  <button onclick="location.reload()">Start Over</button>
+</div>
+
+</div>
+  <div class="snow"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
